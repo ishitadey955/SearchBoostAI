@@ -127,7 +127,17 @@ def main():
     if st.session_state["blog_titles"]:
 
         st.markdown("## ✨ Generated Titles")
-        st.markdown(st.session_state["blog_titles"])
+
+    titles_raw = st.session_state["blog_titles"]
+
+    titles_list = [
+        t.strip().lstrip('0123456789. ')
+        for t in titles_raw.replace('. ', '\n').split('\n')
+        if t.strip()
+    ]
+
+    for i, title in enumerate(titles_list, 1):
+        st.markdown(f"{i}. {title}")
 
         # Excel Export
         titles_list = [
