@@ -72,7 +72,7 @@ pip install -r requirements.txt
 ## 4️⃣ Run the App
 
 ```bash
-streamlit run blogtitle_app.py
+py -m streamlit run blogtitle_app.py
 ```
 
 Your browser will open automatically at:
