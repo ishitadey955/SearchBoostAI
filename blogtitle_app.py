@@ -152,10 +152,11 @@ def main():
         buffer.seek(0)
 
         st.download_button(
-            "Download Titles as Excel",
-            buffer,
-            "blog_titles.xlsx",
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            label="Download Titles as Excel",
+            data=buffer,
+            file_name="blog_titles.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            key="download_excel_button"
         )
 
 
@@ -215,3 +216,4 @@ def gemini_text_response(prompt, user_gemini_api_key=None):
 
 if __name__ == "__main__":
     main()
+
